@@ -12,9 +12,27 @@
 // }
 
 
+function continueGame() {
+    // step 1: genarate a random alphabet
+}
+
+
 function play() {
     hideElementById('home-section');
     showElementById('playground-section');
+    continueGame( )
+}
+
+function rendomAAlphabet() {
+    // get or create a alphabet array
+    const alphabetStrings = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const alphabets = alphabetStrings.split('');
+    console.log(alphabets);
+
+    // get a random index between 0-25
+    const randomNumber = Math.random() * 25;
+    const indexNumber = Math.round(randomNumber);
+    console.log(indexNumber);
 }
 
 
