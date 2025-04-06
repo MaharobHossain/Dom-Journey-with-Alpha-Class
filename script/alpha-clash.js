@@ -14,6 +14,12 @@
 
 function continueGame() {
     // step 1: genarate a random alphabet
+    const alphabet = getARandomAlphabet();
+    console.log('Your Random Alphabet: ',alphabet);
+
+    // set randomly genareted alphabet to the screen ( show it )
+    const currentAlphabetElement = document.getElementById('current-alphabet');
+    currentAlphabetElement.innerText = alphabet;
 }
 
 
@@ -23,16 +29,19 @@ function play() {
     continueGame( )
 }
 
-function rendomAAlphabet() {
+function getARandomAlphabet() {
     // get or create a alphabet array
     const alphabetStrings = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const alphabets = alphabetStrings.split('');
-    console.log(alphabets);
+   // console.log(alphabets);
 
     // get a random index between 0-25
     const randomNumber = Math.random() * 25;
     const indexNumber = Math.round(randomNumber);
-    console.log(indexNumber);
+
+    const alphabet = alphabets[indexNumber];
+   //  console.log(indexNumber, alphabet);
+    return alphabet;
 }
 
 
