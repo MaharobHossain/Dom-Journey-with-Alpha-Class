@@ -20,18 +20,22 @@ function continueGame() {
     // set randomly genareted alphabet to the screen ( show it )
     const currentAlphabetElement = document.getElementById('current-alphabet');
     currentAlphabetElement.innerText = alphabet;
+
+    // Set Background Color
+    setBackgroundColorById(alphabet);
+
 }
 
 
 function play() {
     hideElementById('home-section');
     showElementById('playground-section');
-    continueGame( )
+    continueGame();
 }
 
 function getARandomAlphabet() {
     // get or create a alphabet array
-    const alphabetStrings = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const alphabetStrings = 'abcdefghijklmnopqrstuvwxyz';
     const alphabets = alphabetStrings.split('');
    // console.log(alphabets);
 
