@@ -26,6 +26,23 @@ function handelKeybordButtonPress(event) {
     if(playerPress === expectedAlphabet){
         console.log(' You are win');
         console.log('You have pressed Currently', expectedAlphabet)
+
+        // Updated Score - 3 method
+        // 1. get the current score
+        const currentScoreElement = document.getElementById('current-score');
+        const currentScoreText = currentScoreElement.innerText;
+        const currentScore = parseInt(currentScoreText);
+        console.log(currentScore);
+
+        // 2. increse the score by 1
+        const newScore = currentScore + 1;
+
+        // 3. show the updated score
+        currentScoreElement.innerText = newScore;
+
+
+
+        // start a new round
         removeBackgroundColorById(expectedAlphabet);
         continueGame();
     }
