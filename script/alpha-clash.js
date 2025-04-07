@@ -25,6 +25,9 @@ function handelKeybordButtonPress(event) {
     //  cheak alphabet matched or not
     if(playerPress === expectedAlphabet){
         console.log(' You are win');
+        console.log('You have pressed Currently', expectedAlphabet)
+        removeBackgroundColorById(expectedAlphabet);
+        continueGame();
     }
     else{
         console.log('You are missed. You lost a life')
