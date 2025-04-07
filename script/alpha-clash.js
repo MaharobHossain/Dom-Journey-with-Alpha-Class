@@ -12,6 +12,27 @@
 // }
 
 
+function handelKeybordButtonPress(event) {
+    const playerPress = event.key;
+    console.log('Current Player Key Press: ',playerPress);
+
+    //  get the expected to press
+    const currentAlphabetElement= document.getElementById('current-alphabet');
+    const currentAlphabet = currentAlphabetElement.innerText;
+    const expectedAlphabet = currentAlphabet.toLowerCase();
+    console.log(playerPress, expectedAlphabet);
+
+    //  cheak alphabet matched or not
+    if(playerPress === expectedAlphabet){
+        console.log(' You are win');
+    }
+    else{
+        console.log('You are missed. You lost a life')
+    }
+}
+// capture keybord key press
+document.addEventListener('keyup', handelKeybordButtonPress )
+
 function continueGame() {
     // step 1: genarate a random alphabet
     const alphabet = getARandomAlphabet();
