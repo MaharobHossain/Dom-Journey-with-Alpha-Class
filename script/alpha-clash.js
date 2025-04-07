@@ -28,6 +28,7 @@ function handelKeybordButtonPress(event) {
         console.log('You have pressed Currently', expectedAlphabet)
 
         // Updated Score - 3 method
+
         // 1. get the current score
         const currentScoreElement = document.getElementById('current-score');
         const currentScoreText = currentScoreElement.innerText;
@@ -40,14 +41,26 @@ function handelKeybordButtonPress(event) {
         // 3. show the updated score
         currentScoreElement.innerText = newScore;
 
-
-
         // start a new round
         removeBackgroundColorById(expectedAlphabet);
         continueGame();
     }
     else{
         console.log('You are missed. You lost a life')
+
+        // Updated Life line - 3 method
+
+        // 1. get the current life number
+        const currentLifeElement = document.getElementById('current-life');
+        const currentLifeText = currentLifeElement.innerText;
+        const currentLife = parseInt(currentLifeText);
+
+        // 2. reduce the life count
+        const newLife = currentLife - 1;
+
+        // 3. display the updated life line number
+        currentLifeElement.innerText = newLife;
+
     }
 }
 // capture keybord key press
