@@ -25,15 +25,16 @@ function handelKeybordButtonPress(event) {
     //  cheak alphabet matched or not
     if(playerPress === expectedAlphabet){
         console.log(' You are win');
-        console.log('You have pressed Currently', expectedAlphabet)
+        // console.log('You have pressed Currently', expectedAlphabet)
 
 
 
         // use function 
         const currentScore = getTextElementValueById('current-score');
         const updatedScore = currentScore + 1;
-        
+        setTextElementValueById('current-score', updatedScore);
 
+        //----------------------------------------------
         // // Updated Score - 3 method
         // // 1. get the current score
         // const currentScoreElement = document.getElementById('current-score');
@@ -52,9 +53,15 @@ function handelKeybordButtonPress(event) {
         continueGame();
     }
     else{
-       //  console.log('You are missed. You lost a life')
+        console.log('You are missed. You lost a life');
 
+
+        const currentLife = getTextElementValueById('current-life');
+        const updatedLife = currentLife - 1;
+        setTextElementValueById('current-life', updatedLife);
        
+
+        //----------------------------------------------
         // // Updated Life line - 3 method
         // // 1. get the current life number
         // const currentLifeElement = document.getElementById('current-life');
