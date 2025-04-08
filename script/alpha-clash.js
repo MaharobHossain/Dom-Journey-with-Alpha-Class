@@ -111,6 +111,18 @@ function play() {
 function gameOver() {
     hideElementById('playground-section');
     showElementById('final-score');
+
+    //  Updated final score
+    //  1. get the final score
+    const lastScore = getTextElementValueById('current-score');
+    //  console.log('Your score is: ', lastScore);
+    setTextElementValueById('last-score', lastScore);
+
+    //  clear the last selected alphabet highlight
+
+    const currentAlphabet = getElementTextById('current-alphabet');
+    //  console.log(currentAlphabet);
+    removeBackgroundColorById(currentAlphabet);
 }
 
 function getARandomAlphabet() {
