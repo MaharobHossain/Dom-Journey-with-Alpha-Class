@@ -130,20 +130,7 @@ function gameOver() {
     removeBackgroundColorById(currentAlphabet);
 }
 
-function getARandomAlphabet() {
-    // get or create a alphabet array
-    const alphabetStrings = 'abcdefghijklmnopqrstuvwxyz';
-    const alphabets = alphabetStrings.split('');
-   // console.log(alphabets);
 
-    // get a random index between 0-25
-    const randomNumber = Math.random() * 25;
-    const indexNumber = Math.round(randomNumber);
-
-    const alphabet = alphabets[indexNumber];
-   //  console.log(indexNumber, alphabet);
-    return alphabet;
-}
 
 
 
