@@ -14,17 +14,17 @@
 
 function handelKeybordButtonPress(event) {
     const playerPress = event.key;
-    console.log('Current Player Key Press: ',playerPress);
+    // console.log('Current Player Key Press: ',playerPress);
 
     //  get the expected to press
     const currentAlphabetElement= document.getElementById('current-alphabet');
     const currentAlphabet = currentAlphabetElement.innerText;
     const expectedAlphabet = currentAlphabet.toLowerCase();
-    console.log(playerPress, expectedAlphabet);
+    //  console.log(playerPress, expectedAlphabet);
 
     //  cheak alphabet matched or not
     if(playerPress === expectedAlphabet){
-        console.log(' You are win');
+        // console.log(' You are win');
         // console.log('You have pressed Currently', expectedAlphabet)
 
 
@@ -53,12 +53,16 @@ function handelKeybordButtonPress(event) {
         continueGame();
     }
     else{
-        console.log('You are missed. You lost a life');
+        //  console.log('You are missed. You lost a life');
 
 
         const currentLife = getTextElementValueById('current-life');
         const updatedLife = currentLife - 1;
         setTextElementValueById('current-life', updatedLife);
+
+        if( updatedLife === 0 ){
+            gameOver();
+        }
        
 
         //----------------------------------------------
@@ -72,8 +76,6 @@ function handelKeybordButtonPress(event) {
         // // 3. display the updated life line number
         // currentLifeElement.innerText = newLife;
 
-
-
     }
 }
 // capture keybord key press
@@ -82,7 +84,7 @@ document.addEventListener('keyup', handelKeybordButtonPress )
 function continueGame() {
     // step 1: genarate a random alphabet
     const alphabet = getARandomAlphabet();
-    console.log('Your Random Alphabet: ',alphabet);
+    // console.log('Your Random Alphabet: ',alphabet);
 
     // set randomly genareted alphabet to the screen ( show it )
     const currentAlphabetElement = document.getElementById('current-alphabet');
@@ -95,9 +97,20 @@ function continueGame() {
 
 
 function play() {
+    //  hide everything show only the playground
     hideElementById('home-section');
+    hideElementById('final-score');
     showElementById('playground-section');
+
+    // reset score and life 
+    setTextElementValueById('current-life', 10);
+    setTextElementValueById('current-score', 0);
     continueGame();
+}
+
+function gameOver() {
+    hideElementById('playground-section');
+    showElementById('final-score');
 }
 
 function getARandomAlphabet() {
